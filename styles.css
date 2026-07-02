@@ -55,19 +55,10 @@ header {
 
 .logo-wrapper { display: flex; align-items: center; gap: 14px; }
 
-.logo-mark {
-    width: 50px;
+.logo-img {
+    width: auto;
     height: 50px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, var(--navy), #2c4d77);
-    color: var(--gold-bright);
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(30, 58, 95, 0.25);
+    object-fit: contain;
 }
 
 .logo-text {
