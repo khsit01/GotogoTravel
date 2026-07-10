@@ -174,25 +174,53 @@ nav a:hover { color: var(--gold); }
     font-weight: 400;
 }
 
-.btn-pill {
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.btn-pill, .btn-pill-outline {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
-    background: var(--navy);
-    color: #fff;
     font-size: 1.05rem;
     font-weight: 500;
     padding: 16px 38px;
     border-radius: 999px;
-    margin-top: 40px;
-    box-shadow: 0 8px 22px rgba(30, 58, 95, 0.28);
-    transition: transform 0.25s, box-shadow 0.25s;
+    transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s, color 0.25s;
+    text-decoration: none;
 }
 
-.btn-pill:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(30, 58, 95, 0.35); }
+.btn-pill {
+    background: var(--navy);
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(30, 58, 95, 0.28);
+}
 
-.btn-pill .arrow { transition: transform 0.25s; }
-.btn-pill:hover .arrow { transform: translateX(5px); }
+.btn-pill-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+}
+
+.btn-pill:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 12px 28px rgba(30, 58, 95, 0.35); 
+}
+
+.btn-pill-outline:hover {
+    transform: translateY(-3px);
+    background: var(--navy);
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(30, 58, 95, 0.2);
+}
+
+.btn-pill .arrow, .btn-pill-outline .arrow { transition: transform 0.25s; }
+.btn-pill:hover .arrow, .btn-pill-outline:hover .arrow { transform: translateX(5px); }
 
 /* ---------- 區塊共用 ---------- */
 .section { padding: 100px 0; }
