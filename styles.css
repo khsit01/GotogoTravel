@@ -207,6 +207,17 @@ nav a:hover {
     background: #3fae6a;
 }
 
+.bear-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 3px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .hero h1 {
     font-size: 3.4rem;
     letter-spacing: 0.14em;
@@ -396,34 +407,30 @@ nav a:hover {
     box-shadow: 0 20px 50px rgba(30, 58, 95, 0.15);
     background: var(--navy);
     min-height: 480px;
-}
-
-.bears-collage {
-    position: absolute;
-    inset: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     padding: 30px;
 }
 
 .bears-row-1 {
     display: flex;
     justify-content: space-between;
-    height: 40%;
+    height: 180px;
+    width: 100%;
 }
 
 .bears-row-2 {
     display: flex;
     justify-content: center;
-    height: 45%;
+    height: 180px;
+    width: 100%;
 }
 
 .bear-img {
     height: 100%;
-    width: auto;
+    width: 48%;
     object-fit: contain;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
     transition: transform 0.4s;
 }
 
@@ -432,22 +439,14 @@ nav a:hover {
 }
 
 .collage-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-family: var(--sans);
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--gold);
-    text-shadow: 0 4px 15px rgba(30, 58, 95, 0.8);
-    pointer-events: none;
-    white-space: nowrap;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
     letter-spacing: 0.12em;
-    background: rgba(30, 58, 95, 0.6);
-    padding: 10px 30px;
-    border-radius: 999px;
-    backdrop-filter: blur(4px);
+    margin: 10px auto 0;
 }
 
 .about-badges {
