@@ -660,7 +660,17 @@ footer .copyright {
     }
 
     .about-visual {
-        min-height: 280px;
+        min-height: auto;
+    }
+    
+    .bears-row-1, .bears-row-2 {
+        height: 120px;
+    }
+
+    .collage-overlay {
+        font-size: 1.5rem;
+        padding: 8px 24px;
+        margin: 10px auto 0;
     }
 }
 
