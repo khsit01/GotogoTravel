@@ -816,9 +816,12 @@ footer .copyright {
     box-shadow: 0 10px 20px rgba(30, 58, 95, 0.1);
 }
 
-.modal-icon {
-    font-size: 3rem;
+.modal-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
     margin-bottom: 15px;
+    mix-blend-mode: multiply;
 }
 
 .modal-card h4 {
