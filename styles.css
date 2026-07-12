@@ -841,3 +841,303 @@ footer .copyright {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   Japan Charter Page Styles
+   ========================================================================== */
+.charter-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
+    padding: 120px 20px 80px;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--gold);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-charter-img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    mix-blend-mode: multiply;
+    background-color: transparent;
+}
+
+.charter-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 60px 20px;
+    background-color: #f8faff;
+}
+
+.feature-box {
+    text-align: center;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    min-width: 200px;
+    border: 1px solid #e1e8f2;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.feature-box h4 {
+    color: var(--navy);
+    margin: 0;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--gold);
+}
+
+.pricing-card h3 {
+    color: var(--navy);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pricing-table th, .pricing-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-table th {
+    background-color: #f8faff;
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.pricing-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Details Section */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.details-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.details-card h3 {
+    color: var(--navy);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold);
+}
+
+.details-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.details-card ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.details-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.extra-fees li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+}
+
+.extra-fees li::before {
+    display: none;
+}
+
+.extra-fees li padding-left {
+    padding-left: 0;
+}
+
+.commitment-text {
+    margin-top: 20px;
+    background-color: #fcf8e3;
+    padding: 15px;
+    border-radius: 10px;
+    color: #8a6d3b;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Free Services */
+.free-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.free-service-box {
+    text-align: center;
+    background: white;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.free-service-box:hover {
+    transform: translateY(-5px);
+}
+
+.free-service-box .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.free-service-box h4 {
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.free-service-box p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Process */
+.process-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    position: relative;
+}
+
+.step-num {
+    width: 50px;
+    height: 50px;
+    background-color: var(--gold);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.process-step h4 {
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.process-step p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Policy */
+.policy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.policy-content h3 {
+    color: var(--navy);
+    margin: 20px 0 15px;
+}
+
+.policy-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.policy-content li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+    color: #444;
+}
+
+.policy-content li::before {
+    content: '▪';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+}
+
+.policy-content small {
+    color: #888;
+    display: block;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
