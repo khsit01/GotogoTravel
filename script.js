@@ -35,4 +35,38 @@ document.addEventListener('DOMContentLoaded', function () {
         // 不支援時直接顯示
         revealEls.forEach(function (el) { el.classList.add('visible'); });
     }
+
+    // Modal 邏輯
+    const japanBtn = document.getElementById('japan-btn');
+    const japanModal = document.getElementById('japan-modal');
+    
+    if (japanBtn && japanModal) {
+        const closeBtn = japanModal.querySelector('.close-btn');
+        const modalCards = japanModal.querySelectorAll('.modal-card');
+
+        // 打開 Modal
+        japanBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            japanModal.classList.add('show');
+        });
+
+        // 關閉 Modal (X按鈕)
+        closeBtn.addEventListener('click', function() {
+            japanModal.classList.remove('show');
+        });
+
+        // 點擊背景關閉
+        japanModal.addEventListener('click', function(e) {
+            if (e.target === japanModal) {
+                japanModal.classList.remove('show');
+            }
+        });
+
+        // 點擊選項卡後關閉 Modal (平滑滾動到聯絡我們)
+        modalCards.forEach(card => {
+            card.addEventListener('click', function() {
+                japanModal.classList.remove('show');
+            });
+        });
+    }
 });
