@@ -53,83 +53,247 @@
         </div>
     </section>
 
-    <!-- Vehicle Introduction -->
-    <section class="charter-vehicle section" style="background-color: #fff; padding: 60px 20px;">
-        <h2 class="section-title">車輛介紹</h2>
-        <div class="vehicle-grid" style="display: flex; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; gap: 40px; align-items: center; background: #f8faff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--gold);">
-            <div class="vehicle-image" style="flex: 1; min-width: 300px; text-align: center;">
-                <img src="https://qqtour.com/wp-content/uploads/2025/03/7.jpg" alt="6人座商務車" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-            </div>
-            <div class="vehicle-details" style="flex: 1; min-width: 300px;">
-                <h3 style="color: var(--navy); font-size: 1.8rem; margin-bottom: 20px;">6人座商務車</h3>
-                <ul style="list-style: none; padding: 0; font-size: 1.1rem; color: #444; line-height: 2;">
-                    <li><strong style="color: var(--navy);">🚗 參考車型：</strong>豐田 Alphard 或同級</li>
-                    <li><strong style="color: var(--navy);">👥 乘客人數：</strong>最多 6 位</li>
-                    <li><strong style="color: var(--navy);">🧳 行李容量：</strong>最多 4 件 (24吋)</li>
-                    <li><strong style="color: var(--navy);">🗣️ 服務語言：</strong>中文、日語</li>
-                </ul>
-                <p style="margin-top: 20px; color: #666; line-height: 1.6;">
-                    為家庭旅遊、商務洽公提供最頂級舒適的乘坐體驗。寬敞的內部空間與高級座椅，讓您的日本之旅玩得開心又安心！
-                </p>
-            </div>
+    <!-- Vehicle Selection Tabs -->
+    <div class="vehicle-tabs-container" style="text-align: center; margin: 40px auto 20px;">
+        <div class="vehicle-tabs" style="display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 15px; background: white; padding: 10px; border-radius: 50px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <button class="tab-btn active" data-target="van-6" style="padding: 12px 30px; font-size: 1.1rem; border: none; background: var(--gold); border-radius: 40px; cursor: pointer; transition: all 0.3s; color: white; font-weight: bold;">6人座商務車</button>
+            <button class="tab-btn" data-target="van-9" style="padding: 12px 30px; font-size: 1.1rem; border: none; background: transparent; border-radius: 40px; cursor: pointer; transition: all 0.3s; color: var(--navy); font-weight: bold;">9人座商務車</button>
+            <button class="tab-btn" data-target="van-13" style="padding: 12px 30px; font-size: 1.1rem; border: none; background: transparent; border-radius: 40px; cursor: pointer; transition: all 0.3s; color: var(--navy); font-weight: bold;">13人座商務車</button>
         </div>
-    </section>
+    </div>
 
-    <!-- Pricing Section -->
-    <section class="charter-pricing section">
-        <h2 class="section-title">服務價格參考 (6人座商務車)</h2>
-        <div class="pricing-grid">
-            
-            <div class="pricing-card">
-                <h3>東京 (司導)</h3>
-                <table class="pricing-table">
-                    <tr><th>行程</th><th>價格 (JPY)</th></tr>
-                    <tr><td>羽田機場 - 東京市區 (單程)</td><td>9,000</td></tr>
-                    <tr><td>成田機場 - 東京市區 (單程)</td><td>16,000</td></tr>
-                    <tr><td>東京市區包車 (10小時)</td><td>35,000</td></tr>
-                    <tr><td>箱根包車 (10小時)</td><td>45,000</td></tr>
-                    <tr><td>富士山包車 (10小時)</td><td>45,000</td></tr>
-                </table>
-            </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const tabs = document.querySelectorAll(".tab-btn");
+        const contents = document.querySelectorAll(".vehicle-content");
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                tabs.forEach(t => { t.classList.remove("active"); t.style.background = "transparent"; t.style.color = "var(--navy)"; });
+                tab.classList.add("active");
+                tab.style.background = "var(--gold)";
+                tab.style.color = "white";
+                contents.forEach(c => c.style.display = "none");
+                document.getElementById(tab.getAttribute("data-target")).style.display = "block";
+            });
+        });
+    });
+    </script>
 
-            <div class="pricing-card">
-                <h3>大阪 (司導)</h3>
-                <table class="pricing-table">
-                    <tr><th>行程</th><th>價格 (JPY)</th></tr>
-                    <tr><td>關西機場 - 大阪市區 (單程)</td><td>12,000</td></tr>
-                    <tr><td>關西機場 - 京都市區 (單程)</td><td>20,000</td></tr>
-                    <tr><td>大阪市區包車 (10小時)</td><td>35,000</td></tr>
-                    <tr><td>京都一日遊 (10小時)</td><td>40,000</td></tr>
-                    <tr><td>奈良一日遊 (10小時)</td><td>40,000</td></tr>
-                </table>
+    <!-- VAN 6 -->
+    <div id="van-6" class="vehicle-content" style="display: block;">
+        <section class="charter-vehicle section" style="background-color: #fff; padding: 20px 20px 60px;">
+            <div class="vehicle-grid" style="display: flex; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; gap: 40px; align-items: center; background: #f8faff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--gold);">
+                <div class="vehicle-image" style="flex: 1; min-width: 300px; text-align: center;">
+                    <img src="https://qqtour.com/wp-content/uploads/2025/03/7.jpg" alt="6人座商務車" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                </div>
+                <div class="vehicle-details" style="flex: 1; min-width: 300px;">
+                    <h3 style="color: var(--navy); font-size: 1.8rem; margin-bottom: 20px;">6人座商務車</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 1.1rem; color: #444; line-height: 2;">
+                        <li><strong style="color: var(--navy);">🚗 參考車型：</strong>豐田 Alphard 或同級</li>
+                        <li><strong style="color: var(--navy);">👥 乘客人數：</strong>最多 6 位</li>
+                        <li><strong style="color: var(--navy);">🧳 行李容量：</strong>最多 4 件 (24吋)</li>
+                        <li><strong style="color: var(--navy);">🗣️ 服務語言：</strong>中文、日語</li>
+                    </ul>
+                    <p style="margin-top: 20px; color: #666; line-height: 1.6;">為家庭旅遊、商務洽公提供最頂級舒適的乘坐體驗。寬敞的內部空間與高級座椅，讓您的日本之旅玩得開心又安心！</p>
+                </div>
             </div>
+        </section>
+        <section class="charter-pricing section">
+            <h2 class="section-title">服務價格參考 (6人座商務車)</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>東京 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>羽田機場 - 東京市區 (單程)</td><td>12,000</td></tr>
+                        <tr><td>成田機場 - 東京市區 (單程)</td><td>19,000</td></tr>
+                        <tr><td>東京市區包車 (10小時)</td><td>40,000</td></tr>
+                        <tr><td>箱根包車 (10小時)</td><td>50,000</td></tr>
+                        <tr><td>富士山包車 (10小時)</td><td>50,000</td></tr>
+                    </table>
+                </div>
+                <div class="pricing-card">
+                    <h3>大阪 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>關西機場 - 大阪市區 (單程)</td><td>15,000</td></tr>
+                        <tr><td>伊丹機場 - 大阪市區 (單程)</td><td>10,000</td></tr>
+                        <tr><td>關西機場 - 京都市區 (單程)</td><td>25,000</td></tr>
+                        <tr><td>大阪市區包車 (10小時)</td><td>40,000</td></tr>
+                        <tr><td>京都一日遊 (10小時)</td><td>45,000</td></tr>
+                        <tr><td>奈良一日遊 (10小時)</td><td>45,000</td></tr>
+                    </table>
+                </div>
+                <div class="pricing-card">
+                    <h3>九州 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>福岡機場 - 福岡市區 (單程)</td><td>15,000</td></tr>
+                        <tr><td>福岡市區包車 (10小時)</td><td>45,000</td></tr>
+                        <tr><td>由布院+別府包車 (10小時)</td><td>55,000</td></tr>
+                        <tr><td>熊本+阿蘇包車 (10小時)</td><td>65,000</td></tr>
+                        <tr><td>長崎包車 (8小時)</td><td>65,000</td></tr>
+                        <tr><td>鹿兒島包車 (10小時)</td><td>75,000</td></tr>
+                    </table>
+                </div>
+                <div class="pricing-card">
+                    <h3>北海道 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>新千歲機場 - 札幌市區 (單程)</td><td>30,000</td></tr>
+                        <tr><td>新千歲機場 - 洞爺湖 (單程)</td><td>50,000</td></tr>
+                        <tr><td>札幌市內包車 (10小時)</td><td>50,000</td></tr>
+                        <tr><td>札幌-洞爺湖+登別包車 (10小時)</td><td>70,000</td></tr>
+                        <tr><td>札幌-富良野+旭川包車 (10小時)</td><td>70,000</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
 
-            <div class="pricing-card">
-                <h3>九州 (司導)</h3>
-                <table class="pricing-table">
-                    <tr><th>行程</th><th>價格 (JPY)</th></tr>
-                    <tr><td>福岡機場 - 福岡市區 (單程)</td><td>15,000</td></tr>
-                    <tr><td>福岡市區包車 (10小時)</td><td>45,000</td></tr>
-                    <tr><td>由布院+別府包車 (10小時)</td><td>55,000</td></tr>
-                    <tr><td>熊本+阿蘇包車 (10小時)</td><td>65,000</td></tr>
-                    <tr><td>長崎/鹿兒島包車 (10小時)</td><td>65,000起</td></tr>
-                </table>
+    <!-- VAN 9 -->
+    <div id="van-9" class="vehicle-content" style="display: none;">
+        <section class="charter-vehicle section" style="background-color: #fff; padding: 20px 20px 60px;">
+            <div class="vehicle-grid" style="display: flex; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; gap: 40px; align-items: center; background: #f8faff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--gold);">
+                <div class="vehicle-image" style="flex: 1; min-width: 300px; text-align: center;">
+                    <img src="https://qqtour.com/wp-content/uploads/2025/03/10.jpg" alt="9人座商務車" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                </div>
+                <div class="vehicle-details" style="flex: 1; min-width: 300px;">
+                    <h3 style="color: var(--navy); font-size: 1.8rem; margin-bottom: 20px;">9人座商務車</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 1.1rem; color: #444; line-height: 2;">
+                        <li><strong style="color: var(--navy);">🚗 參考車型：</strong>豐田 海獅 (Hiace) 或同級</li>
+                        <li><strong style="color: var(--navy);">👥 乘客人數：</strong>最多 9 位</li>
+                        <li><strong style="color: var(--navy);">🧳 行李容量：</strong>最多 9 件 (24吋)</li>
+                        <li><strong style="color: var(--navy);">🗣️ 服務語言：</strong>中文、日語</li>
+                    </ul>
+                    <p style="margin-top: 20px; color: #666; line-height: 1.6;">寬敞舒適的九人座空間，適合家族旅遊或是三五好友一同出遊，讓每一位乘客都能享有充裕的個人空間。</p>
+                </div>
             </div>
-            
-            <div class="pricing-card">
-                <h3>北海道 (司導)</h3>
-                <table class="pricing-table">
-                    <tr><th>行程</th><th>價格 (JPY)</th></tr>
-                    <tr><td>新千歲機場 - 札幌市區 (單程)</td><td>25,000</td></tr>
-                    <tr><td>新千歲機場 - 洞爺湖 (單程)</td><td>45,000</td></tr>
-                    <tr><td>札幌市內包車 (10小時)</td><td>50,000</td></tr>
-                    <tr><td>札幌-洞爺湖+登別包車 (10小時)</td><td>65,000</td></tr>
-                    <tr><td>札幌-富良野+旭川包車 (10小時)</td><td>65,000</td></tr>
-                </table>
+        </section>
+        <section class="charter-pricing section">
+            <h2 class="section-title">服務價格參考 (9人座商務車)</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>東京 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>羽田機場 - 東京市區 (單程)</td><td>12,000</td></tr>
+                        <tr><td>成田機場 - 東京市區 (單程)</td><td>19,000</td></tr>
+                        <tr><td>東京市區包車 (10小時)</td><td>40,000</td></tr>
+                        <tr><td>箱根包車 (10小時)</td><td>50,000</td></tr>
+                        <tr><td>富士山包車 (10小時)</td><td>50,000</td></tr>
+                    </table>
+                </div>
+                <div class="pricing-card">
+                    <h3>大阪 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>關西機場 - 大阪市區 (單程)</td><td>15,000</td></tr>
+                        <tr><td>伊丹機場 - 大阪市區 (單程)</td><td>10,000</td></tr>
+                        <tr><td>關西機場 - 京都市區 (單程)</td><td>25,000</td></tr>
+                        <tr><td>大阪市區包車 (10小時)</td><td>40,000</td></tr>
+                        <tr><td>京都一日遊 (10小時)</td><td>45,000</td></tr>
+                        <tr><td>奈良一日遊 (10小時)</td><td>45,000</td></tr>
+                    </table>
+                </div>
+                <div class="pricing-card">
+                    <h3>九州 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>福岡機場 - 福岡市區 (單程)</td><td>15,000</td></tr>
+                        <tr><td>福岡市區包車 (10小時)</td><td>45,000</td></tr>
+                        <tr><td>由布院+別府包車 (10小時)</td><td>55,000</td></tr>
+                        <tr><td>熊本+阿蘇包車 (10小時)</td><td>65,000</td></tr>
+                        <tr><td>長崎包車 (8小時)</td><td>65,000</td></tr>
+                        <tr><td>鹿兒島包車 (10小時)</td><td>75,000</td></tr>
+                    </table>
+                </div>
+                <div class="pricing-card">
+                    <h3>北海道 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>新千歲機場 - 札幌市區 (單程)</td><td>30,000</td></tr>
+                        <tr><td>新千歲機場 - 洞爺湖 (單程)</td><td>50,000</td></tr>
+                        <tr><td>札幌市內包車 (10小時)</td><td>50,000</td></tr>
+                        <tr><td>札幌-洞爺湖+登別包車 (10小時)</td><td>70,000</td></tr>
+                        <tr><td>札幌-富良野+旭川包車 (10小時)</td><td>70,000</td></tr>
+                    </table>
+                </div>
             </div>
+        </section>
+    </div>
 
-        </div>
-    </section>
+    <!-- VAN 13 -->
+    <div id="van-13" class="vehicle-content" style="display: none;">
+        <section class="charter-vehicle section" style="background-color: #fff; padding: 20px 20px 60px;">
+            <div class="vehicle-grid" style="display: flex; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; gap: 40px; align-items: center; background: #f8faff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--gold);">
+                <div class="vehicle-image" style="flex: 1; min-width: 300px; text-align: center;">
+                    <img src="https://qqtour.com/wp-content/uploads/2025/03/14.jpg" alt="13人座商務車" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                </div>
+                <div class="vehicle-details" style="flex: 1; min-width: 300px;">
+                    <h3 style="color: var(--navy); font-size: 1.8rem; margin-bottom: 20px;">13人座商務車</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 1.1rem; color: #444; line-height: 2;">
+                        <li><strong style="color: var(--navy);">🚗 參考車型：</strong>豐田 海獅 (Hiace) 或同級</li>
+                        <li><strong style="color: var(--navy);">👥 乘客人數：</strong>最多 13 位</li>
+                        <li><strong style="color: var(--navy);">🧳 行李容量：</strong>最多 6 件 (24吋)</li>
+                        <li><strong style="color: var(--navy);">🗣️ 服務語言：</strong>中文、日語</li>
+                    </ul>
+                    <p style="margin-top: 20px; color: #666; line-height: 1.6;">專為中型團體設計，舒適的座椅配置加上充足的置物空間，無論是員工旅遊或是親友相聚，都能提供最優質的接送服務。</p>
+                </div>
+            </div>
+        </section>
+        <section class="charter-pricing section">
+            <h2 class="section-title">服務價格參考 (13人座商務車)</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>東京 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>羽田機場 - 東京市區 (單程)</td><td>15,000</td></tr>
+                        <tr><td>成田機場 - 東京市區 (單程)</td><td>22,000</td></tr>
+                        <tr><td>東京市區包車 (10小時)</td><td>45,000</td></tr>
+                        <tr><td>箱根包車 (10小時)</td><td>55,000</td></tr>
+                        <tr><td>富士山包車 (10小時)</td><td>55,000</td></tr>
+                    </table>
+                </div>
+                <div class="pricing-card">
+                    <h3>大阪 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>關西機場 - 大阪市區 (單程)</td><td>20,000</td></tr>
+                        <tr><td>伊丹機場 - 大阪市區 (單程)</td><td>15,000</td></tr>
+                        <tr><td>關西機場 - 京都市區 (單程)</td><td>30,000</td></tr>
+                        <tr><td>大阪市區包車 (10小時)</td><td>45,000</td></tr>
+                        <tr><td>京都一日遊 (10小時)</td><td>50,000</td></tr>
+                        <tr><td>奈良一日遊 (10小時)</td><td>50,000</td></tr>
+                    </table>
+                </div>
+                <div class="pricing-card">
+                    <h3>九州 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>福岡機場 - 福岡市區 (單程)</td><td>15,000</td></tr>
+                        <tr><td>福岡市區包車 (10小時)</td><td>45,000</td></tr>
+                        <tr><td>由布院+別府包車 (10小時)</td><td>55,000</td></tr>
+                        <tr><td>熊本+阿蘇包車 (10小時)</td><td>65,000</td></tr>
+                        <tr><td>長崎包車 (8小時)</td><td>65,000</td></tr>
+                        <tr><td>鹿兒島包車 (10小時)</td><td>75,000</td></tr>
+                    </table>
+                </div>
+                <div class="pricing-card">
+                    <h3>北海道 (司導)</h3>
+                    <table class="pricing-table">
+                        <tr><th>行程</th><th>價格 (JPY)</th></tr>
+                        <tr><td>新千歲機場 - 札幌市區 (單程)</td><td>40,000</td></tr>
+                        <tr><td>新千歲機場 - 洞爺湖 (單程)</td><td>55,000</td></tr>
+                        <tr><td>札幌市內包車 (10小時)</td><td>55,000</td></tr>
+                        <tr><td>札幌-洞爺湖+登別包車 (10小時)</td><td>70,000</td></tr>
+                        <tr><td>札幌-富良野+旭川包車 (10小時)</td><td>70,000</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Fee Details Section -->
     <section class="charter-details section">
