@@ -69,4 +69,23 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    // 輪播初始化 (Swiper)
+    if (typeof Swiper !== 'undefined') {
+        const vehicleSwiper = new Swiper('.vehicle-swiper', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+        });
+    }
 });
